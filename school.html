@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+    <link rel="stylesheet" href="stylev.css">
+</head>
+<body>
+    <center><h1 style="text-shadow: 2px 2px red;"><u>Salaar School of Violence</u></h1></center>
+    <br><br>
+    <form id="admissionForm">
+        <div id="container"> 
+            <div class="div1">
+                <h2><u>Admission Form</u>:</h2>
+                <label>Enter your full name:</label>
+                <input type="text" id="fullName">
+                <br><br>
+                <label>Date of birth:</label>
+                <input type="date" id="dob">
+                <br><br>
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <br><br>
+                <label>Nationality:</label>
+                <input type="radio" name="nationality" value="Indian"> Indian
+                <input type="radio" name="nationality" value="NRI"> NRI
+                <input type="radio" name="nationality" value="Other"> Other
+                <br><br>
+                <label>Religion:</label>
+                <input type="radio" name="religion" value="Hindu"> Hindu
+                <input type="radio" name="religion" value="Christian"> Christian
+                <input type="radio" name="religion" value="Muslim"> Muslim
+                <input type="radio" name="religion" value="Other"> Other
+                <br><br>
+            </div> 
+            <hr>
+            <h2><u>Parent/Guardian Details :</u></h2>
+            <div class="div2">
+                <label>Father's Name:</label>
+                <input type="text" id="fatherName">
+                <br><br>
+                <label>Father's Occupation:</label>
+                <input type="text" id="fatherOccupation">
+                <br><br>
+                <label>Mother's Name:</label>
+                <input type="text" id="motherName">
+                <br><br>
+                <label>Mother's Occupation:</label>
+                <input type="text" id="motherOccupation">
+                <br><br>
+                <label>Contact Number:</label>
+                <input type="number" id="contactNumber">
+                <br><br>
+                <label>Email Address:</label>
+                <input type="email" id="emailAddress">
+                <br><br>
+                <label>Residential Address:</label>
+                <input type="text" id="residentialAddress">
+                <br><br>
+            </div>
+            <hr>
+            <h2><u>Academic Details</u></h2>
+            <div class="div3">
+                <label>Previous School Name:</label>
+                <input type="text" id="prevSchool">
+                <br><br>
+                <label>Year of Passing:</label>
+                <input type="number" id="yearOfPassing">
+                <br><br>
+                <label>Medium of Instruction:</label>
+                <input type="radio" name="medium" value="English"> English
+                <input type="radio" name="medium" value="Telugu"> Telugu
+                <input type="radio" name="medium" value="Hindi"> Hindi
+                <br><br>
+                <label>Transfer Certificate (TC) Number:</label>
+                <input type="text" id="tcNumber">
+                <br><br>
+            </div>
+            <hr>
+            <div class="div5">
+                <label>
+                    <input type="checkbox" id="checkbutton">
+                    I confirm that all details provided are correct.
+                </label>
+                <br><br>
+                <button type="submit">Complete Registration</button>
+            </div>
+        </div> 
+    </form>
+    
+    <div id="displayData" style="margin-top: 20px; padding: 10px; background: #f0f0f0; display: none;"></div>
+    
+    <footer style="text-align: center; padding: 10px; background:purple; color: white; margin-top: 20px;">
+        <p>© 2025 All Rights Reserved | Designed by Vivek</p>
+    </footer>
+    
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            let displayDiv = document.getElementById('displayData');
+            displayDiv.style.display = 'block';
+            
+            let output = '<h2>Submitted Details:</h2>';
+            output += `<p><strong>Full Name:</strong> ${document.getElementById('fullName').value}</p>`;
+            output += `<p><strong>Date of Birth:</strong> ${document.getElementById('dob').value}</p>`;
+            output += `<p><strong>Father's Name:</strong> ${document.getElementById('fatherName').value}</p>`;
+            output += `<p><strong>Father's Occupation:</strong> ${document.getElementById('fatherOccupation').value}</p>`;
+            output += `<p><strong>Mother's Name:</strong> ${document.getElementById('motherName').value}</p>`;
+            output += `<p><strong>Mother's Occupation:</strong> ${document.getElementById('motherOccupation').value}</p>`;
+            output += `<p><strong>Contact Number:</strong> ${document.getElementById('contactNumber').value}</p>`;
+            output += `<p><strong>Email Address:</strong> ${document.getElementById('emailAddress').value}</p>`;
+            output += `<p><strong>Residential Address:</strong> ${document.getElementById('residentialAddress').value}</p>`;
+            output += `<p><strong>Previous School Name:</strong> ${document.getElementById('prevSchool').value}</p>`;
+            output += `<p><strong>Year of Passing:</strong> ${document.getElementById('yearOfPassing').value}</p>`;
+            output += `<p><strong>Transfer Certificate Number:</strong> ${document.getElementById('tcNumber').value}</p>`;
+            
+            displayDiv.innerHTML = output;
+        });
+    </script>
+</body>
+</html>
